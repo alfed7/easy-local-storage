@@ -1,8 +1,8 @@
 {
-  "name": "easy-local-storage",
+  "name": "web-local-storage",
   "version": "0.1.1",
   "description": "Convenience class to work with localStorage. Implements the same interface as js-cookie.",
-  "main": "easy-local-storage.js",
+  "main": "web-local-storage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

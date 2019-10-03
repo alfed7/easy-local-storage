@@ -1,4 +1,4 @@
-function EasyLocalStorage() {
+function WebLocalStorage() {
     this.get = function (fieldName) {
         if(this._haveLocalStorage()) {
             return localStorage.getItem(fieldName);
@@ -19,4 +19,4 @@ function EasyLocalStorage() {
     }
 }
 
-module.exports = EasyLocalStorage;
+module.exports = WebLocalStorage;
