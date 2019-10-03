@@ -1,0 +1,24 @@
+{
+  "name": "easy-local-storage",
+  "version": "0.1.1",
+  "description": "Convenience class to work with localStorage. Implements the same interface as js-cookie.",
+  "main": "easy-local-storage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfed7/easy-local-storage.git"
+  },
+  "keywords": [
+    "localStorage",
+    "cookie",
+    "jwt"
+  ],
+  "author": "Alexander Fedorenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alfed7/easy-local-storage/issues"
+  },
+  "homepage": "https://github.com/alfed7/easy-local-storage#readme"
+}
