@@ -1,10 +1,11 @@
 {
   "name": "web-local-storage",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Convenience class to work with localStorage. Implements the same interface as js-cookie.",
-  "main": "web-local-storage.js",
+  "main": "dist/web-local-storage.js",
+  "types": "dist/web-local-storage.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -16,6 +17,9 @@
     "cookie",
     "jwt"
   ],
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  },
   "author": "Alexander Fedorenko",
   "license": "MIT",
   "bugs": {
