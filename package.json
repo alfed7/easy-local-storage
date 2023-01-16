@@ -1,6 +1,6 @@
 {
   "name": "web-local-storage",
-  "version": "0.1.8",
+  "version": "0.1.11",
   "description": "Convenience class to work with localStorage. Implements the same interface as js-cookie.",
   "main": "dist/web-local-storage.js",
   "types": "dist/web-local-storage.d.ts",
@@ -17,13 +17,8 @@
     "cookie",
     "jwt"
   ],
-  "peerDependencies": {
-    "js-cookie": "^3.0.1"
-  },
   "devDependencies": {
-    "typescript": "^4.9.4",
-    "js-cookie": "^3.0.1",
-    "@types/js-cookie": "3.0.2"
+    "typescript": "^4.9.4"
   },
   "author": "Alexander Fedorenko",
   "license": "MIT",

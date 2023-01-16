@@ -1,4 +1,3 @@
-import Cookies from 'js-cookie';
 export interface IWebStorage {
     get(fieldName: string): string;
     set(fieldName: string, value: string, options: any): void;
@@ -12,6 +11,5 @@ export declare class WebLocalStorage implements IWebStorage {
     remove(fieldName: string): void;
     _haveLocalStorage(): boolean;
 }
-export default function getStorage(useCookies?: boolean, useSessionStorage?: boolean): (Cookies.CookiesStatic<string> & {
-    noConflict?(): Cookies.CookiesStatic<string>;
-}) | WebLocalStorage;
+declare const _default: (useSessionStorage?: boolean) => WebLocalStorage;
+export default _default;

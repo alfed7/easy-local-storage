@@ -1,13 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebLocalStorage = void 0;
-var js_cookie_1 = __importDefault(require("js-cookie"));
 function _isBrowser() {
     return typeof localStorage !== "undefined";
 }
+var varStorage = {};
 var WebLocalStorage = /** @class */ (function () {
     function WebLocalStorage(useSessionStorage) {
         if (useSessionStorage === void 0) { useSessionStorage = false; }
@@ -19,9 +16,13 @@ var WebLocalStorage = /** @class */ (function () {
     }
     WebLocalStorage.prototype.get = function (fieldName) {
         var _a;
+        var v = null;
         if (this._haveLocalStorage()) {
-            return (_a = this.storage) === null || _a === void 0 ? void 0 : _a.getItem(fieldName);
+            v = (_a = this.storage) === null || _a === void 0 ? void 0 : _a.getItem(fieldName);
         }
+        if (!v)
+            v = varStorage[fieldName];
+        return v;
     };
     ;
     WebLocalStorage.prototype.set = function (fieldName, value, _) {
@@ -30,6 +31,7 @@ var WebLocalStorage = /** @class */ (function () {
         if (this._haveLocalStorage()) {
             (_a = this.storage) === null || _a === void 0 ? void 0 : _a.setItem(fieldName, value);
         }
+        varStorage[fieldName] = value;
     };
     ;
     WebLocalStorage.prototype.remove = function (fieldName) {
@@ -37,6 +39,7 @@ var WebLocalStorage = /** @class */ (function () {
         if (this._haveLocalStorage()) {
             (_a = this.storage) === null || _a === void 0 ? void 0 : _a.removeItem(fieldName);
         }
+        varStorage[fieldName] = null;
     };
     ;
     WebLocalStorage.prototype._haveLocalStorage = function () {
@@ -46,10 +49,8 @@ var WebLocalStorage = /** @class */ (function () {
     return WebLocalStorage;
 }());
 exports.WebLocalStorage = WebLocalStorage;
-function getStorage(useCookies, useSessionStorage) {
-    if (useCookies === void 0) { useCookies = false; }
+exports.default = (function (useSessionStorage) {
     if (useSessionStorage === void 0) { useSessionStorage = false; }
-    return useCookies ? js_cookie_1.default : new WebLocalStorage(useSessionStorage);
-}
-exports.default = getStorage;
+    return new WebLocalStorage(useSessionStorage);
+});
 //# sourceMappingURL=web-local-storage.js.map
